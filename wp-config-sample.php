@@ -20,19 +20,19 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'database_name_here' );
+define( 'DB_NAME', 'wordpress_database' );
 
 /** MySQL database username */
-define( 'DB_USER', 'username_here' );
+define( 'DB_USER', 'root' );
 
 /** MySQL database password */
-define( 'DB_PASSWORD', 'password_here' );
+define( 'DB_PASSWORD', '' );
 
 /** MySQL hostname */
 define( 'DB_HOST', 'localhost' );
 
 /** Database Charset to use in creating database tables. */
-define( 'DB_CHARSET', 'utf8' );
+define( 'DB_CHARSET', 'utf8mb4' );
 
 /** The Database Collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
@@ -46,14 +46,14 @@ define( 'DB_COLLATE', '' );
  *
  * @since 2.6.0
  */
-define( 'AUTH_KEY',         'put your unique phrase here' );
-define( 'SECURE_AUTH_KEY',  'put your unique phrase here' );
-define( 'LOGGED_IN_KEY',    'put your unique phrase here' );
-define( 'NONCE_KEY',        'put your unique phrase here' );
-define( 'AUTH_SALT',        'put your unique phrase here' );
-define( 'SECURE_AUTH_SALT', 'put your unique phrase here' );
-define( 'LOGGED_IN_SALT',   'put your unique phrase here' );
-define( 'NONCE_SALT',       'put your unique phrase here' );
+define( 'AUTH_KEY',         'c3QH,EzbsdD>v{fv#Y~6@JJHE -.<+w3])fsEv/dBPI*|`~8(?Y^K`3>zc=U%Z7f' );
+define( 'SECURE_AUTH_KEY',  'YF79|%7%f+.Tsw::Vsfa+^r{y+z-qbPirH>1#vrQh+bcY()Br@!nF{=6!tP/$^Y|' );
+define( 'LOGGED_IN_KEY',    '-5%Ei8JFTZz>3eTjexU8=W!IV-Z#bqyRNDymOKp-3`0-Ypu918JUbYxD%{!9,,9O' );
+define( 'NONCE_KEY',        'Z}zBTQB)1E#4VSe!}FpQw5vLX~EEIg-iOMY-OS/Tj>^zLUcDCfQ?s?YnGS.*Ap=I' );
+define( 'AUTH_SALT',        '/ jllFP~-@DXa&GVZuha]:dDO,8d_3L)+g;;EWNzv chdH%CvA_u(f8&:4qLo@R;' );
+define( 'SECURE_AUTH_SALT', '7h086**l) JT.`s$rn/IDx)x2#vYc!u`!vZhaG/a=+y1:|+?3Ek*VSftv[(KOs0n' );
+define( 'LOGGED_IN_SALT',   'g|lQzs:^sC=h2KvU%j*|)Xtxc/::~.[|}8TUIB(!pyE~TKu%QS@EX>%/>!D8FE^i' );
+define( 'NONCE_SALT',       '`6VJ(S6!N}5`W7qA$aWQp(hKPYFvz#qjEU!iy3&*Vy5LE% Q/(Xqa1Mowuhglk7a' );
 
 /**#@-*/
 
