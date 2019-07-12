@@ -56,6 +56,10 @@ video {
     max-width: 100%;
     height: 265px;
 }
+#img-secction2{
+    max-width: 100%;
+    height: 250px;
+}
 a {
     text-decoration: none;
     outline: 0; }

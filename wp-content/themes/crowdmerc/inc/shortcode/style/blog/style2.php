@@ -6,7 +6,7 @@
                 $img = wp_get_attachment_image_src(get_post_thumbnail_id( get_the_ID() ),'full');
                 $img = $img[0];
           	?>
-                <a href="<?php echo esc_url(get_the_permalink()); ?>"><img src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr(get_the_title()); ?>"></a>
+                <a href="<?php echo esc_url(get_the_permalink()); ?>"><img src="<?php echo esc_url($img); ?>" id="img-secction2" alt="<?php echo esc_attr(get_the_title()); ?>"></a>
           <?php endif; ?>
 		</div><!-- .fundpress-item-header END -->
 		<div class="fundpress-item-content xs-content-padding bg-color-white">
