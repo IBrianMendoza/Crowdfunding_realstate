@@ -2434,42 +2434,33 @@ h1#ps_login_success a:hover {
  }
  #div11{
      display: inline-block;
- }
- #contenedor1{ 
-     height: 50px;
-     width: 300px;
-     padding-top: 15px;
- }
- #contenedor2{ 
-     height: 50px;
-     width: 300px;
-     padding-top: 15px;
- }
- #contenedor3{ 
-     height: 50px;
-     width: 300px;
-     padding-top: 15px;
- }
- #contenedor4{ 
-     height: 50px;
-     width: 300px;
-     padding-top: 15px;
- }
- #contenedor5{ 
-     height: 50px;
-     width: 300px;
-     padding-top: 15px;
- }
- #contenedor6{ 
-     height: 50px;
-     width: 300px;
-     padding-top: 15px;
-     text-align: center;
- }
- #contenedor7{ 
-     height: 20px;
-     width: 300px;
-     padding-top: 15px;
-     text-align: center;
-     padding-bottom: 15px;
- }
+ } #contenedor1{ 
+    padding: 10px;
+    padding-top: 10px;
+}
+#contenedor2{ 
+ 
+   padding: 10px;
+   padding-top: 10px;
+}
+#contenedor3{ 
+   padding: 10px;
+   padding-top: 10px;
+}
+#contenedor4{ 
+   padding: 10px;
+   padding-top: 10px;
+}
+#contenedor5{ 
+   padding: 10px;
+   padding-top: 10px;
+}
+#contenedor6{ 
+    padding-top: 10px;
+    text-align: center;
+}
+#contenedor7{ 
+    padding-top: 15px;
+    text-align: center;
+    padding-bottom: 15px;
+}
