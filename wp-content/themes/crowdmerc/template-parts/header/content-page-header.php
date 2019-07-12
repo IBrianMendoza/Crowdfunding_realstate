@@ -27,7 +27,7 @@ if(get_post_type() == 'event'){
 <section class="xs-inner-welcome-section fundpress-inner-welcome-section fundpress-inner-bg-1 parallax-window" data-parallax="scroll" data-image-src="<?php echo esc_url($banner); ?>">
 	<div class="xs-solid-overlay xs-bg-black"></div>
 		<div class="container">
-			<div class="fundpress-inner-welcome-content" style="padding-top: 150px; padding-bottom: 50px;">
+			<div class="fundpress-inner-welcome-content">
 				<?php if(!empty($header_title)): ?>
 					<h2 class="color-white"><?php echo esc_html($header_title); ?></h2>
 				<?php endif; ?>
