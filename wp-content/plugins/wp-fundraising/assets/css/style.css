@@ -2944,39 +2944,31 @@ h5.auth_success{
      display: inline-block;
  }
  #contenedor1{ 
-     height: 50px;
-     width: 300px;
-     padding-top: 15px;
+     padding: 10px;
+     padding-top: 10px;
  }
  #contenedor2{ 
-     height: 50px;
-     width: 300px;
-     padding-top: 15px;
+  
+    padding: 10px;
+    padding-top: 10px;
  }
  #contenedor3{ 
-     height: 50px;
-     width: 300px;
-     padding-top: 15px;
+    padding: 10px;
+    padding-top: 10px;
  }
  #contenedor4{ 
-     height: 50px;
-     width: 300px;
-     padding-top: 15px;
+    padding: 10px;
+    padding-top: 10px;
  }
  #contenedor5{ 
-     height: 50px;
-     width: 300px;
-     padding-top: 15px;
+    padding: 10px;
+    padding-top: 10px;
  }
  #contenedor6{ 
-     height: 50px;
-     width: 300px;
-     padding-top: 15px;
+     padding-top: 10px;
      text-align: center;
  }
  #contenedor7{ 
-     height: 20px;
-     width: 300px;
      padding-top: 15px;
      text-align: center;
      padding-bottom: 15px;
