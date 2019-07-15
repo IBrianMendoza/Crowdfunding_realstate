@@ -128,7 +128,7 @@ $grid = 12/$cols;
                     <?php } ?> 
                 </ul>
                 <div id="contenedor7" >
-                    <div><a class="btn btn-success button-campaings-secction" href="<?php the_permalink();?>">Ver proyecto</a></div>
+                    <div><a class="btn btn-success button-campaings-secction" href="<?php the_permalink();?>">Listo para invertir</a></div>
                 </div>
                 <!--
                 <ul class="xs-list-with-content fundpress-list-item-content">
