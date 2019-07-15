@@ -42,7 +42,7 @@ if (!function_exists('wf_single_invest_now_button_text')) {
 if (!function_exists('wf_single_fund_goal_text')) {
     function wf_single_fund_goal_text()
     {
-        return apply_filters('wf_single_fund_goal_text', esc_html__('Meta', 'wp-fundraising'));
+        return apply_filters('wf_single_fund_goal_text', esc_html__('Monto solicitado', 'wp-fundraising'));
     }
 }
 
@@ -139,7 +139,7 @@ if (!function_exists('wf_archive_backers_count_text')) {
 if (!function_exists('wf_archive_fund_goal_text')) {
     function wf_archive_fund_goal_text()
     {
-        return apply_filters('wf_archive_fund_goal_text', esc_html__('Meta', 'wp-fundraising'));
+        return apply_filters('wf_archive_fund_goal_text', esc_html__('Monto solicitado', 'wp-fundraising'));
     }
 }
 
@@ -219,7 +219,7 @@ if (!function_exists('wf_add_new_campaign_text')) {
 if (!function_exists('wf_dashboard_fund_goal_text')) {
     function wf_dashboard_fund_goal_text()
     {
-        return apply_filters('wf_dashboard_fund_goal_text', esc_html__('Meta', 'wp-fundraising'));
+        return apply_filters('wf_dashboard_fund_goal_text', esc_html__('Monto solicitado', 'wp-fundraising'));
     }
 }
 
