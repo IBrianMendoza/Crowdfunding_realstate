@@ -2933,35 +2933,35 @@ h5.auth_success{
     display: block;
 }
 .div-alaizquierda{
-    margin-left: 15px;
+    margin-left: 7px;
     display: inline-block;
  }
  .div-aladerecha{
     float: right;
-    margin-right: 15px;
+    margin-right: 7px;
  }
  #div11{
      display: inline-block;
  }
  #contenedor1{ 
-     padding: 5px;
+     padding: 10px;
      padding-top: 10px;
  }
  #contenedor2{ 
   
-    padding: 5px;
+    padding: 10px;
     padding-top: 10px;
  }
  #contenedor3{ 
-    padding: 5px;
+    padding: 10px;
     padding-top: 10px;
  }
  #contenedor4{ 
-    padding: 5px;
+    padding: 10px;
     padding-top: 10px;
  }
  #contenedor5{ 
-    padding: 5px;
+    padding: 10px;
     padding-top: 10px;
  }
  #contenedor6{ 
@@ -2974,10 +2974,10 @@ h5.auth_success{
      padding-bottom: 15px;
  }
  #contenedor8{ 
-    padding: 5px;
+    padding: 10px;
     padding-top: 10px;
  }
  #contenedor9{ 
-    padding: 5px;
+    padding: 10px;
     padding-top: 10px;
  }
