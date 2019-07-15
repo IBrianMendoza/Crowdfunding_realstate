@@ -87,23 +87,33 @@ $grid = 12/$cols;
                 </div>
                 <div id="contenedor2">
                     <div class="div-alaizquierda">
-                        <?php echo wf_archive_fund_raised_text(); ?>
+                        <!--<?php echo wf_archive_fund_raised_text(); ?> -->
+                        %solicitado del valor del proyecto
                     </div>
                     <div class="div-aladerecha" style="color: green; font-size: 16px; font-weight: bold;">
-                        <?php echo wc_price($raised); ?>
+                        <!--<?php echo wc_price($raised); ?>-->
+                        17%
                     </div>
                 </div>
                 <div id="contenedor3">
-                    <div class="div-alaizquierda">Rendimiento estimado</div>
-                    <div class="div-aladerecha" style="color: #4CC899; font-size: 16px; font-weight: bold;">%15.5</div>
+                    <div class="div-alaizquierda">Deja en garantía</div>
+                    <div class="div-aladerecha" style="color: #4CC899; font-size: 16px; font-weight: bold;">24 meses</div>
                 </div>
                 <div id="contenedor4">
-                    <div class="div-alaizquierda">Invierte desde</div>
-                    <div class="div-aladerecha">$5,555,666</div>
+                    <div class="div-alaizquierda">Rendiemiento estimado</div>
+                    <div class="div-aladerecha">34%</div>
                 </div>
                 <div id="contenedor5">
                     <div class="div-alaizquierda">Plazo estimado</div>
                     <div class="div-aladerecha">De 12 a 24 meses</div>
+                </div>
+                <div id="contenedor8">
+                    <div class="div-alaizquierda">Etapa del proyecto</div>
+                    <div class="div-aladerecha">50% de contrucción</div>
+                </div>
+                <div id="contenedor9">
+                    <div class="div-alaizquierda">Mínimo a invertir</div>
+                    <div class="div-aladerecha">17%</div>
                 </div>
                 <ul class="xs-list-with-content fundpress-list-item-content" >
                     <?php if ($show_end_date == 'off') { ?>
