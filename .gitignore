@@ -10,7 +10,7 @@ wp-content/*
 
 # ignore these plugins
 wp-content/plugins/hello.php
-wp-config-sample.php
+wp-config.php
 
 # ignore specific themes
 wp-content/themes/twenty*/

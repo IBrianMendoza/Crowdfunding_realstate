@@ -14,14 +14,14 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 if (!function_exists('wf_single_backers_count_text')) {
     function wf_single_backers_count_text()
     {
-        return apply_filters('wf_single_backers_count_text', esc_html__('Donadores', 'wp-fundraising'));
+        return apply_filters('wf_single_backers_count_text', esc_html__('Inversionistas', 'wp-fundraising'));
     }
 }
 
 if (!function_exists('wf_single_backers_tab_text')) {
     function wf_single_backers_tab_text()
     {
-        return apply_filters('wf_single_backers_tab_text', esc_html__('Donadores', 'wp-fundraising'));
+        return apply_filters('wf_single_backers_tab_text', esc_html__('Inversionistas', 'wp-fundraising'));
     }
 }
 
@@ -132,7 +132,7 @@ if (!function_exists('wf_single_expired_text')) {
 if (!function_exists('wf_archive_backers_count_text')) {
     function wf_archive_backers_count_text()
     {
-        return apply_filters('wf_archive_backers_count_text', esc_html__('Donadores', 'wp-fundraising'));
+        return apply_filters('wf_archive_backers_count_text', esc_html__('Inversionistas', 'wp-fundraising'));
     }
 }
 

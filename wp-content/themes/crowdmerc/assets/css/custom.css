@@ -1073,3 +1073,8 @@ span.woocommerce-input-wrapper {
 .woocommerce-terms-and-conditions-wrapper {
     width: 100%;
 }
+.fundpress-inner-welcome-section .fundpress-inner-welcome-content {
+
+    padding-top: 150px !important;
+    padding-bottom: 50px !important;
+}
