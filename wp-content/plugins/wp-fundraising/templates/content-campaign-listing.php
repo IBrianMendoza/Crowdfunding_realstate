@@ -86,11 +86,11 @@ $grid = 12/$cols;
                     </div>
                 </div>
                 <div id="contenedor2">
-                    <div class="div-alaizquierda">
+                    <div class="div-alaizquierda1">
                         <!--<?php echo wf_archive_fund_raised_text(); ?> -->
                         %solicitado del valor del proyecto
                     </div>
-                    <div class="div-aladerecha" style="color: green; font-size: 16px; font-weight: bold;">
+                    <div class="div-aladerecha1" style="color: green; font-size: 16px; font-weight: bold;">
                         <!--<?php echo wc_price($raised); ?>-->
                         17%
                     </div>

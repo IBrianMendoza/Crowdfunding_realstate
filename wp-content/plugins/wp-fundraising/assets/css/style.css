@@ -2933,12 +2933,18 @@ h5.auth_success{
     display: block;
 }
 .div-alaizquierda{
-    margin-left: 7px;
+    margin-left: 2px;
     display: inline-block;
  }
  .div-aladerecha{
     float: right;
-    margin-right: 7px;
+    margin-right: 2px;
+ }
+ .div-aladerecha1{
+    float: right;
+ }
+ .div-alaizquierda1{
+     display: inline-block;
  }
  #div11{
      display: inline-block;
@@ -2948,7 +2954,6 @@ h5.auth_success{
      padding-top: 10px;
  }
  #contenedor2{ 
-  
     padding: 10px;
     padding-top: 10px;
  }
