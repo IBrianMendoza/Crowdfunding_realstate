@@ -105,11 +105,11 @@ $grid = 12/$cols;
                 </div>
                 <div id="contenedor5">
                     <div class="div-alaizquierda">Plazo estimado</div>
-                    <div class="div-aladerecha">De 12 a 24 meses</div>
+                    <div class="div-aladerecha">12 a 24 meses</div>
                 </div>
                 <div id="contenedor8">
-                    <div class="div-alaizquierda">Etapa del proyecto</div>
-                    <div class="div-aladerecha">50% de contrucción</div>
+                    <div class="div-alaizquierda">% de construcción</div>
+                    <div class="div-aladerecha">50%</div>
                 </div>
                 <div id="contenedor9">
                     <div class="div-alaizquierda">Mínimo a invertir</div>
