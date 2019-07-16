@@ -415,7 +415,7 @@ if (!class_exists('WP_FundRaising')) {
                     $html .= do_action('before_wf_donate_field');
                     $recomanded_price = get_post_meta($post->ID, 'wp_funding_recommended_price', true);
                     $html .= get_woocommerce_currency_symbol();
-                    $html .= apply_filters('wp_donate_field', '<input type ="number" step="any" class="input-text amount wp_donation_input text" name="wp_donate_amount_field" min="0" value="100" />');
+                    $html .= apply_filters('wp_donate_field', '<input type ="number" step="20000" class="input-text amount wp_donation_input text" name="wp_donate_amount_field" min="0" value="100" />');
                     $html .= do_action('after_wf_donate_field');
                     $html .= '<input type="hidden" name="add-to-cart" value="' . esc_attr($product->get_id()) . '" />';
                     $btn_text = get_option('wp_donation_btn_text');

@@ -2750,7 +2750,7 @@ h1#ps_login_success a:hover {
 
 .help-tip p{
     display: none;
-    text-align: left;
+    text-align: center;
     background-color: #1E2021;
     padding: 20px;
     width: 300px;
@@ -2985,4 +2985,11 @@ h5.auth_success{
  #contenedor9{ 
     padding: 10px;
     padding-top: 10px;
+ }
+ .informacion-listing{
+     display: inline-block;
+     font-size: 1em;
+     color: black;
+     font-weight: bold;
+     padding-top: 10px;
  }

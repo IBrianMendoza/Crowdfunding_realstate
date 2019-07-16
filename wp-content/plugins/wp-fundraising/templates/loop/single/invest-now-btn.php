@@ -8,16 +8,28 @@ if ($product->get_type() == 'wp_fundraising') {
         $recomanded_price = get_post_meta($post->ID, '_wf_funding_recommended_price', true);
         $min_price = get_post_meta($post->ID, '_wf_funding_minimum_price', true);
         $max_price = get_post_meta($post->ID, '_wf_funding_maximum_price', true);
+        $porconstruccion     = get_post_meta( $post->ID, '_wf_porconstruccion', true );
+        $plazo               = get_post_meta( $post->ID, '_wf_plazo', true );
+        $rendimiento         = get_post_meta( $post->ID, '_wf_rendimiento', true );
+        $garantia            = get_post_meta( $post->ID, '_wf_garantia', true );
+        $porcentaje          = get_post_meta( $post->ID, '_wf_porcentaje', true );
     ?>
 
         <form enctype="multipart/form-data" method="post" class="cart">
             <div class="xs-single-sidebar">
                 <div class="xs-btn-wraper">
                     <?php echo get_woocommerce_currency_symbol(); ?>
-                    <input type="number" step="any" placeholder="<?php esc_attr_e('Amount','wp-fundraising');?>" name="wp_donate_amount_field" class="input-text amount wp_donate_amount_field text" value="<?php echo $recomanded_price; ?>" value="<?php echo number_format($recomanded_price,wc_get_price_decimals(),wc_get_price_decimal_separator(), wc_get_price_thousand_separator()); ?>"  min="<?php echo $min_price ?>" max="<?php echo $max_price ?>" >
+                    <input type="number" step="20000" placeholder="<?php esc_attr_e('Amount','wp-fundraising');?>" name="wp_donate_amount_field" class="input-text amount wp_donate_amount_field text" value="<?php echo $recomanded_price; ?>" value="<?php echo number_format($recomanded_price,wc_get_price_decimals(),wc_get_price_decimal_separator(), wc_get_price_thousand_separator()); ?>"  min="<?php echo $min_price ?>" max="<?php echo $max_price ?>" >
                     <?php do_action('after_wf_donate_field'); ?>
                     <input type="hidden" value="<?php echo esc_attr($post->ID); ?>" name="add-to-cart">
                     <button type="submit" class="icon-btn xs-btn radius-btn green-btn xs-btn-medium <?php echo apply_filters('add_to_donate_button_class', 'wp_donate_button'); ?>"><?php echo wf_single_invest_now_button_text(); ?></button>
+                </div>
+                <div>
+                    <div class="informacion-listing"><span><?php esc_attr_e("Porcentaje de construcción: ", "wp-fundraising"); echo $porconstruccion; echo "%";?></span></div>
+                    <div class="informacion-listing"><span><?php esc_attr_e("Plazo del proyecto: ", "wp-fundraising"); echo $plazo; echo " meses";?></span></div>
+                    <div class="informacion-listing"><span><?php esc_attr_e("Porcentaje de rendimiento: ", "wp-fundraising"); echo $rendimiento; echo "%";?></span></div>
+                    <div class="informacion-listing"><span><?php esc_attr_e("Meses en garantía: ", "wp-fundraising"); echo $garantia; echo " meses";?></span></div>
+                    <div class="informacion-listing"><span><?php esc_attr_e("Porcentaje solicitado: ", "wp-fundraising"); echo $porcentaje; echo "%";?></span></div>
                 </div>
             </div>
         </form>

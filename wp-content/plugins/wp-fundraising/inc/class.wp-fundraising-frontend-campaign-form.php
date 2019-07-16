@@ -25,6 +25,7 @@ if (! class_exists('WP_Fundraising_Frontend_Campaign_Submit_Form')) {
 
                 $title = $campaign_goal = $description = $short_description  = $campaign_predefined_amount = $category = $tag = $image_id = $video = $start_date = '';
                 $end_date = $min_price = $max_price = $recommended_price = $type = '';
+                $porconstruccion = $plazo = $rendimiento = $garantia = $porcentaje = '';
                 $campaign_end_method = $campaign_contributor_table = $campaign_contributor_show = $campaign_country = $campaign_location = '';
 
                 if ( empty($_POST['wp_fundraising_terms_agree'])){
@@ -92,6 +93,22 @@ if (! class_exists('WP_Fundraising_Frontend_Campaign_Submit_Form')) {
 
                 if ($_POST['wf_campaign_location']) {
                     $campaign_location = sanitize_text_field($_POST['wf_campaign_location']);
+                }
+                //customfields
+                if ($_POST['wf_campaign_porconstruccion']) {
+                    $porconstruccion = sanitize_text_field($_POST['wf_campaign_porconstruccion']);
+                }
+                if ($_POST['wf_campaign_plazo']) {
+                    $plazo = sanitize_text_field($_POST['wf_campaign_plazo']);
+                }
+                if ($_POST['wf_campaign_rendimiento']) {
+                    $rendimiento = sanitize_text_field($_POST['wf_campaign_rendimiento']);
+                }
+                if ($_POST['wf_campaign_garantia']) {
+                    $garantia = sanitize_text_field($_POST['wf_campaign_garantia']);
+                }
+                if ($_POST['wf_campaign_porcentaje']) {
+                    $porcentaje = sanitize_text_field($_POST['wf_campaign_porcentaje']);
                 }
 
 
@@ -200,6 +217,12 @@ if (! class_exists('WP_Fundraising_Frontend_Campaign_Submit_Form')) {
                     update_post_meta($campaign_id, '_wf_mark_contributors_as_anonymous', $campaign_contributor_show);
                     update_post_meta($campaign_id, '_wf_country', $campaign_country);
                     update_post_meta($campaign_id, '_wf_location', $campaign_location);
+
+                    update_post_meta($campaign_id, '_wf_porconstruccion', $porconstruccion);
+                    update_post_meta($campaign_id, '_wf_plazo', $plazo);
+                    update_post_meta($campaign_id, '_wf_porcentaje', $porcentaje);
+                    update_post_meta($campaign_id, '_wf_rendimiento', $rendimiento);
+                    update_post_meta($campaign_id, '_wf_garantia', $garantia);
 
                     update_post_meta( $campaign_id, 'repeatable_reward_fields', $new_reward );
 

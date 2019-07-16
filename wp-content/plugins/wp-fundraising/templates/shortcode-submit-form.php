@@ -9,7 +9,7 @@ add_shortcode( 'wp_fundraising_form','wp_fundraising_campaign_form_shortcode' );
 // Shortcode for Forntend Submission Form
 function wp_fundraising_campaign_form_shortcode( $atts ){
     global $post;
-    $title = $campaign_goal = $description = $short_description  = $minimum_amount = $maximum_amount = $category = $tag = $image_id = $video = $start_date = '';
+    $title = $campaign_goal = $description = $short_description  = $minimum_amount = $maximum_amount = $category = $tag = $image_id = $video = $start_date = $porconstruccion = $plazo = $rendimiento = $garantia = $porcentaje = '';
     $end_date = $recomended_amount = $countries = $country = $location = $type  = $image_url = '';
     $campaign_end_method = $campaign_contributor_table = $contributor_show = $campaign_country = $estimated_date = $campaign_location = '';
     $checked = $checked2 = '';
@@ -53,19 +53,26 @@ function wp_fundraising_campaign_form_shortcode( $atts ){
                             $image_url          = $image_url[0];
                             $image_id           = get_post_thumbnail_id( get_the_ID() );
                         }
-                        $video              = get_post_meta( get_the_ID(), '_wf_funding_video', true );
-                        $start_date         = get_post_meta( get_the_ID(), '_wf_duration_start', true );
-                        $end_date           = get_post_meta( get_the_ID(), '_wf_duration_end', true );
+                        $video               = get_post_meta( get_the_ID(), '_wf_funding_video', true );
+                        $start_date          = get_post_meta( get_the_ID(), '_wf_duration_start', true );
+                        $end_date            = get_post_meta( get_the_ID(), '_wf_duration_end', true );
                         $minimum_amount      = get_post_meta( get_the_ID(), '_wf_funding_maximum_amount', true );
                         $maximum_amount      = get_post_meta( get_the_ID(), '_wf_funding_minimum_amount', true );
                         $recomended_amount   = get_post_meta( get_the_ID(), '_wf_funding_recommended_price', true );
                         $campaign_goal       = get_post_meta( get_the_ID(), '_wf_funding_goal', true );
                         $campaign_end_method = get_post_meta(get_the_ID(), '_wf_campaign_end_method', true);
                         $campaign_contributor_table = get_post_meta( get_the_ID(), '_wf_show_contributor_table', true );
-                        $contributor_show   = get_post_meta( get_the_ID(), '_wf_mark_contributors_as_anonymous', true );
+                        $contributor_show    = get_post_meta( get_the_ID(), '_wf_mark_contributors_as_anonymous', true );
 
-                        $country            = get_post_meta( get_the_ID(), '_wf_country', true );
-                        $location           = get_post_meta( get_the_ID(), '_wf_location', true );
+                        $country             = get_post_meta( get_the_ID(), '_wf_country', true );
+                        $location            = get_post_meta( get_the_ID(), '_wf_location', true );
+
+                        $porconstruccion     = get_post_meta( get_the_ID(), '_wf_porconstruccion', true );
+                        $plazo               = get_post_meta( get_the_ID(), '_wf_plazo', true );
+                        $rendimiento         = get_post_meta( get_the_ID(), '_wf_rendimiento', true );
+                        $garantia            = get_post_meta( get_the_ID(), '_wf_garantia', true );
+                        $porcentaje          = get_post_meta( get_the_ID(), '_wf_porcentaje', true );
+
                         $reward_fields             = get_post_meta( get_the_ID(), 'repeatable_reward_fields', true );
 
                     }
@@ -335,8 +342,62 @@ function wp_fundraising_campaign_form_shortcode( $atts ){
 
         $html .= '</div>';
         $html .= '</div>';
-
-
+        $html .= '<div class="row">';
+        //Porcentaje Solicitado
+        $html .= '<div class="col-lg-3">';
+        $html .= '<div class="form-group">';
+        $html .= '<span class="h3">' . esc_html__("Porcentaje solicitado", "wp-fundraising") . '</span>';
+        $html .= '<div class="help-tip">';
+        $html .= '<p>' . esc_html__("Escribe aqui el porcentaje", "wp-fundraising") . '</p>';
+        $html .= '</div>';
+        $html .= '<input type="number" class="form-control" value="'.$porcentaje.'" name="wf_campaign_porcentaje" id="campaign_porcentaje">';
+        $html .= '</div>';
+        $html .= '</div>';
+        
+        //Garantía
+        $html .= '<div class="col-lg-3">';
+        $html .= '<div class="form-group">';
+        $html .= '<span class="h3">' . esc_html__("Garantía en meses", "wp-fundraising") . '</span>';
+        $html .= '<div class="help-tip">';
+        $html .= '<p>' . esc_html__("La cantidad de meses en garantía", "wp-fundraising") . '</p>';
+        $html .= '</div>';
+        $html .= '<input type="number" class="form-control" value="'.$garantia.'" name="wf_campaign_garantia" id="campaign_garantia">';
+        $html .= '</div>';
+        $html .= '</div>';
+        
+        //Rendimiento
+        $html .= '<div class="col-lg-3">';
+        $html .= '<div class="form-group">';
+        $html .= '<span class="h3">' . esc_html__("Porcentaje de Rendimiento", "wp-fundraising") . '</span>';
+        $html .= '<div class="help-tip">';
+        $html .= '<p>' . esc_html__("Escribe aqui el porcentaje de rendimiento", "wp-fundraising") . '</p>';
+        $html .= '</div>';
+        $html .= '<input type="number" class="form-control" value="'.$rendimiento.'" name="wf_campaign_rendimiento" id="campaign_rendimiento">';
+        $html .= '</div>';
+        $html .= '</div>';
+        
+        //Plazo
+        $html .= '<div class="col-lg-3">';
+        $html .= '<div class="form-group">';
+        $html .= '<span class="h3">' . esc_html__("Plazo en meses", "wp-fundraising") . '</span>';
+        $html .= '<div class="help-tip">';
+        $html .= '<p>' . esc_html__("Escribe aqui el plazo de proyecto en meses", "wp-fundraising") . '</p>';
+        $html .= '</div>';
+        $html .= '<input type="number" class="form-control" value="'.$plazo.'" name="wf_campaign_plazo" id="campaign_plazo">';
+        $html .= '</div>';
+        $html .= '</div>';
+       
+        //Porcentaje de construcción
+        $html .= '<div class="col-lg-3">';
+        $html .= '<div class="form-group">';
+        $html .= '<span class="h3">' . esc_html__("Porcentaje de construcción", "wp-fundraising") . '</span>';
+        $html .= '<div class="help-tip">';
+        $html .= '<p>' . esc_html__("Escribe aqui el porcentaje de rendimiento que lleva el proyecto", "wp-fundraising") . '</p>';
+        $html .= '</div>';
+        $html .= '<input type="number" class="form-control" value="'.$porconstruccion.'" name="wf_campaign_porconstruccion" id="campaign_porconstruccion">';
+        $html .= '</div>';
+        $html .= '</div>';
+        $html .= '</div>';
 
         //Short Description
         $html .= '<div class="form-group">';
