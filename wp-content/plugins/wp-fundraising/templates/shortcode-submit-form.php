@@ -348,7 +348,7 @@ function wp_fundraising_campaign_form_shortcode( $atts ){
         $html .= '<div class="form-group">';
         $html .= '<span class="h3">' . esc_html__("Porcentaje solicitado", "wp-fundraising") . '</span>';
         $html .= '<div class="help-tip">';
-        $html .= '<p>' . esc_html__("Escribe aqui el porcentaje", "wp-fundraising") . '</p>';
+        $html .= '<p>' . esc_html__("Escribe aqui el porcentaje solicitado", "wp-fundraising") . '</p>';
         $html .= '</div>';
         $html .= '<input type="number" class="form-control" value="'.$porcentaje.'" name="wf_campaign_porcentaje" id="campaign_porcentaje">';
         $html .= '</div>';
