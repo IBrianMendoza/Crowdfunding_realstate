@@ -16,6 +16,16 @@ $total_sales    = get_post_meta( get_the_ID(), 'total_sales', true );
 $enddate        = get_post_meta( get_the_ID(), '_wf_duration_end', true );
 $show_end_date = wf_get_option('_wf_hide_campaign_expiry_from_listing', 'wf_basics');
 
+//Custom Fields
+$recomanded_price = get_post_meta($post->ID, '_wf_funding_recommended_price', true);
+$min_price = get_post_meta(get_the_ID(), '_wf_funding_minimum_price', true);
+$max_price = get_post_meta($post->ID, '_wf_funding_maximum_price', true);
+$porconstruccion     = get_post_meta( get_the_ID(), '_wf_porconstruccion', true );
+$plazo               = get_post_meta( get_the_ID(), '_wf_plazo', true );
+$rendimiento         = get_post_meta( get_the_ID(), '_wf_rendimiento', true );
+$garantia            = get_post_meta( get_the_ID(), '_wf_garantia', true );
+$porcentaje          = get_post_meta( get_the_ID(), '_wf_porcentaje', true );
+
 $short_description = apply_filters( 'woocommerce_short_description', get_the_excerpt() );
 //Get days
 $days_remaining = apply_filters('date_expired_msg', esc_html__('La fecha expiró', 'wp-fundraising'));
@@ -87,33 +97,51 @@ $grid = 12/$cols;
                 </div>
                 <div id="contenedor2">
                     <div class="div-alaizquierda1">
-                        <!--<?php echo wf_archive_fund_raised_text(); ?> -->
-                        %solicitado del valor del proyecto
+                        <?php echo "% Solicitado del valor del proyecto"; ?>
                     </div>
                     <div class="div-aladerecha1" style="color: green; font-size: 16px; font-weight: bold;">
-                        <!--<?php echo wc_price($raised); ?>-->
-                        17%
+                        <?php echo $porcentaje;echo "%"; ?>
                     </div>
                 </div>
                 <div id="contenedor3">
-                    <div class="div-alaizquierda">Deja en garantía</div>
-                    <div class="div-aladerecha" style="color: #4CC899; font-size: 16px; font-weight: bold;">24 meses</div>
+                    <div class="div-alaizquierda">
+                        <?php echo "Garantía";?>
+                    </div>
+                    <div class="div-aladerecha" style="color: #4CC899; font-size: 16px; font-weight: bold;">
+                        <?php echo $garantia;echo" meses"; ?>
+                    </div>
                 </div>
                 <div id="contenedor4">
-                    <div class="div-alaizquierda">Rendiemiento estimado</div>
-                    <div class="div-aladerecha">34%</div>
+                    <div class="div-alaizquierda">
+                        <?php echo "Rendiemiento obtenido"; ?>
+                    </div>
+                    <div class="div-aladerecha">
+                        <?php echo $rendimiento; echo "%"; ?>
+                    </div>
                 </div>
                 <div id="contenedor5">
-                    <div class="div-alaizquierda">Plazo estimado</div>
-                    <div class="div-aladerecha">12 a 24 meses</div>
+                    <div class="div-alaizquierda">
+                        <?php echo "Plazo estimado";?>
+                    </div>
+                    <div class="div-aladerecha">
+                        <?php echo $plazo;echo" meses";?>
+                    </div>
                 </div>
                 <div id="contenedor8">
-                    <div class="div-alaizquierda">% de construcción</div>
-                    <div class="div-aladerecha">50%</div>
+                    <div class="div-alaizquierda">
+                        <?php echo "% de construcción" ?>
+                    </div>
+                    <div class="div-aladerecha">
+                        <?php echo $porconstruccion; echo"%";?>
+                    </div>
                 </div>
                 <div id="contenedor9">
-                    <div class="div-alaizquierda">Mínimo a invertir</div>
-                    <div class="div-aladerecha">17%</div>
+                    <div class="div-alaizquierda">
+                        <?php echo "Mínimo a invertir"?>
+                    </div>
+                    <div class="div-aladerecha">
+                        <?php echo"$";echo $min_price?>
+                    </div>
                 </div>
                 <ul class="xs-list-with-content fundpress-list-item-content" >
                     <?php if ($show_end_date == 'off') { ?>

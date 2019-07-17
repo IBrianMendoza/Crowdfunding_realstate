@@ -19,17 +19,72 @@ if ($product->get_type() == 'wp_fundraising') {
             <div class="xs-single-sidebar">
                 <div class="xs-btn-wraper">
                     <?php echo get_woocommerce_currency_symbol(); ?>
-                    <input type="number" step="20000" placeholder="<?php esc_attr_e('Amount','wp-fundraising');?>" name="wp_donate_amount_field" class="input-text amount wp_donate_amount_field text" value="<?php echo $recomanded_price; ?>" value="<?php echo number_format($recomanded_price,wc_get_price_decimals(),wc_get_price_decimal_separator(), wc_get_price_thousand_separator()); ?>"  min="<?php echo $min_price ?>" max="<?php echo $max_price ?>" >
+                    <input type="number" step="50000" placeholder="<?php esc_attr_e('Amount','wp-fundraising');?>" name="wp_donate_amount_field" class="input-text amount wp_donate_amount_field text" value="<?php echo $recomanded_price; ?>" value="<?php echo number_format($recomanded_price,wc_get_price_decimals(),wc_get_price_decimal_separator(), wc_get_price_thousand_separator()); ?>"  min="<?php echo $min_price ?>" max="<?php echo $max_price ?>" >
                     <?php do_action('after_wf_donate_field'); ?>
                     <input type="hidden" value="<?php echo esc_attr($post->ID); ?>" name="add-to-cart">
-                    <button type="submit" class="icon-btn xs-btn radius-btn green-btn xs-btn-medium <?php echo apply_filters('add_to_donate_button_class', 'wp_donate_button'); ?>"><?php echo wf_single_invest_now_button_text(); ?></button>
+                    <button type="submit" style="margin-top: 10px" class="icon-btn xs-btn radius-btn green-btn xs-btn-medium <?php echo apply_filters('add_to_donate_button_class', 'wp_donate_button'); ?>"><?php echo wf_single_invest_now_button_text(); ?></button>
                 </div>
-                <div>
-                    <div class="informacion-listing"><span><?php esc_attr_e("Porcentaje de construcción: ", "wp-fundraising"); echo $porconstruccion; echo "%";?></span></div>
-                    <div class="informacion-listing"><span><?php esc_attr_e("Plazo del proyecto: ", "wp-fundraising"); echo $plazo; echo " meses";?></span></div>
-                    <div class="informacion-listing"><span><?php esc_attr_e("Porcentaje de rendimiento: ", "wp-fundraising"); echo $rendimiento; echo "%";?></span></div>
-                    <div class="informacion-listing"><span><?php esc_attr_e("Meses en garantía: ", "wp-fundraising"); echo $garantia; echo " meses";?></span></div>
-                    <div class="informacion-listing"><span><?php esc_attr_e("Porcentaje solicitado: ", "wp-fundraising"); echo $porcentaje; echo "%";?></span></div>
+                <div class="fundpress-item-content" style="color: black;">
+                <div id="contenedor1">
+                    <div class="div-alaizquierda"> 
+                        <?php echo "Porcentaje solicitado: "; ?>
+                    </div>
+                    <div class="div-aladerecha" style="color: black; font-size: 16px; font-weight: bold">
+                        <?php echo $porcentaje; echo "%" ?>
+                    </div>
+                </div>
+                <div id="contenedor2">
+                    <div class="div-alaizquierda1">
+                        <?php echo "Garantía en meses: " ?>
+                    </div>
+                    <div class="div-aladerecha1" style="color: green; font-size: 16px; font-weight: bold;">
+                        <?php echo $garantia; echo " meses"; ?>
+                    </div>
+                </div>
+                <div id="contenedor3">
+                    <div class="div-alaizquierda">
+                        <?php echo "Rendimiento obtenido: ";?>
+                    </div>
+                    <div class="div-aladerecha" style="color: #4CC899; font-size: 16px; font-weight: bold;">
+                        <?php echo $rendimiento; echo "%"; ?>
+                </div>
+                </div>
+                <div id="contenedor4">
+                    <div class="div-alaizquierda">
+                        <?php echo "Plazo estimado: ";?>
+                    </div>
+                    <div class="div-aladerecha">
+                        <?php echo $plazo; echo " meses"; ?>
+                    </div>
+                </div>
+                <div id="contenedor5">
+                    <div class="div-alaizquierda">
+                        <?php echo "Porcentaje de construcción: "; ?>
+                    </div>
+                    <div class="div-aladerecha">
+                        <?php echo $porconstruccion; echo "%"; ?>
+                    </div>
+                </div>
+                <div id="contenedor8">
+                    <div class="div-alaizquierda">
+                        <?php echo "Inversión minima: ";?>
+                    </div>
+                    <div class="div-aladerecha">
+                        <?php echo"$";echo $min_price; ?>
+                    </div>
+                </div>
+                <ul class="xs-list-with-content fundpress-list-item-content" >
+                    <?php if ($show_end_date == 'off') { ?>
+                        <?php if ($days_remaining) { ?>
+                            <li>
+                                <?php echo $days_remaining; ?>
+                                    <span>
+                                        <?php echo wf_archive_days_remaining_text(); ?>
+                                    </span>
+                            </li>
+                            <?php } ?>
+                    <?php } ?> 
+                </ul>
                 </div>
             </div>
         </form>
