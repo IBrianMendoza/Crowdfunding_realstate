@@ -17,9 +17,9 @@ $enddate        = get_post_meta( get_the_ID(), '_wf_duration_end', true );
 $show_end_date = wf_get_option('_wf_hide_campaign_expiry_from_listing', 'wf_basics');
 
 //Custom Fields
-$recomanded_price = get_post_meta(get_the_ID(), '_wf_funding_recommended_price', true);
+$recomanded_price = get_post_meta(get_the_ID(), '_wf_funding_recommended_price', true);//$post->ID
 $min_price = get_post_meta(get_the_ID(), '_wf_funding_minimum_price', true);
-$max_price = get_post_meta(get_the_ID(), '_wf_funding_maximum_price', true);
+$max_price = get_post_meta(get_the_ID(), '_wf_funding_maximum_price', true); //$post->ID
 $porconstruccion     = get_post_meta( get_the_ID(), '_wf_porconstruccion', true );
 $plazo               = get_post_meta( get_the_ID(), '_wf_plazo', true );
 $rendimiento         = get_post_meta( get_the_ID(), '_wf_rendimiento', true );
