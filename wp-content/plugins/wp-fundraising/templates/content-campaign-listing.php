@@ -5,32 +5,32 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 <?php
 
-
-$funding_goal   = wf_get_total_goal_by_campaign(get_the_ID());
-$raised_percent   = wf_get_fund_raised_percent(get_the_ID());
-$fund_raised_percent   = wf_get_fund_raised_percentFormat(get_the_ID());
+$postId = get_the_id();
+$funding_goal   = wf_get_total_goal_by_campaign($postId);
+$raised_percent   = wf_get_fund_raised_percent($postId);
+$fund_raised_percent   = wf_get_fund_raised_percentFormat($postId);
 $image_link = wp_get_attachment_url(get_post_thumbnail_id());
-$backers_count = wf_backers_count(get_the_ID());
-$wp_country  = get_post_meta( get_the_ID(), '_wf_country', true);
-$total_sales    = get_post_meta( get_the_ID(), 'total_sales', true );
-$enddate        = get_post_meta( get_the_ID(), '_wf_duration_end', true );
+$backers_count = wf_backers_count($postId);
+$wp_country  = get_post_meta( $postId, '_wf_country', true);
+$total_sales    = get_post_meta( $postId, 'total_sales', true );
+$enddate        = get_post_meta( $postId, '_wf_duration_end', true );
 $show_end_date = wf_get_option('_wf_hide_campaign_expiry_from_listing', 'wf_basics');
 
 //Custom Fields
-$recomanded_price = get_post_meta(get_the_ID(), '_wf_funding_recommended_price', true);//$post->ID
-$min_price = get_post_meta(get_the_ID(), '_wf_funding_minimum_price', true);
-$max_price = get_post_meta(get_the_ID(), '_wf_funding_maximum_price', true); //$post->ID
-$porconstruccion     = get_post_meta( get_the_ID(), '_wf_porconstruccion', true );
-$plazo               = get_post_meta( get_the_ID(), '_wf_plazo', true );
-$rendimiento         = get_post_meta( get_the_ID(), '_wf_rendimiento', true );
-$garantia            = get_post_meta( get_the_ID(), '_wf_garantia', true );
-$porcentaje          = get_post_meta( get_the_ID(), '_wf_porcentaje', true );
+$recomanded_price = get_post_meta($postId, '_wf_funding_recommended_price', true);//$post->ID
+$min_price = get_post_meta($postId, '_wf_funding_minimum_price', true);
+$max_price = get_post_meta($postId, '_wf_funding_maximum_price', true); //$post->ID
+$porconstruccion     = get_post_meta( $postId, '_wf_porconstruccion', true );
+$plazo               = get_post_meta( $postId, '_wf_plazo', true );
+$rendimiento         = get_post_meta( $postId, '_wf_rendimiento', true );
+$garantia            = get_post_meta( $postId, '_wf_garantia', true );
+$porcentaje          = get_post_meta( $postId, '_wf_porcentaje', true );
 
 $short_description = apply_filters( 'woocommerce_short_description', get_the_excerpt() );
 //Get days
 $days_remaining = apply_filters('date_expired_msg', esc_html__('La fecha expiró', 'wp-fundraising'));
-        if (wf_date_remaining(get_the_ID())){
-            $days_remaining = apply_filters('date_remaining_msg', esc_html__(wf_date_remaining(get_the_ID()), 'wp-fundraising'));
+        if (wf_date_remaining($postId)){
+            $days_remaining = apply_filters('date_remaining_msg', esc_html__(wf_date_remaining($postId), 'wp-fundraising'));
         }
 //Get Country name from WooCommerce
 
@@ -43,7 +43,7 @@ if ($wp_country){
 }
 
 $raised = 0;
-$total_raised = wf_get_total_fund_raised_by_campaign(get_the_ID());
+$total_raised = wf_get_total_fund_raised_by_campaign($postId);
 
 if ($total_raised){
     $raised = $total_raised;
@@ -53,8 +53,8 @@ if ($total_raised){
 $sales_value_by_product = 0;
 
 $days_remaining = apply_filters('date_expired_msg', esc_html__('El proyecto Finalizó', 'wp-fundraising'));
-if (wf_date_remaining(get_the_ID())){
-    $days_remaining = apply_filters('date_remaining_msg', esc_html__(wf_date_remaining(get_the_ID()), 'wp-fundraising'));
+if (wf_date_remaining($postId)){
+    $days_remaining = apply_filters('date_remaining_msg', esc_html__(wf_date_remaining($postId), 'wp-fundraising'));
 }
 $cols = $args['col'];
 $grid = 12/$cols;
@@ -75,7 +75,7 @@ $grid = 12/$cols;
             </div>
             <div class="fundpress-item-content">
                 <?php
-                    $categories = get_the_terms( get_the_ID(), 'product_cat' );
+                    $categories = get_the_terms( $postId, 'product_cat' );
                 ?>
                 <!--
                 <ul class="xs-simple-tag fundpress-simple-tag">
@@ -285,7 +285,7 @@ $grid = 12/$cols;
             </div>
             <div class="xs-item-content">
                 <?php
-                $categories = get_the_terms( get_the_ID(), 'product_cat' );
+                $categories = get_the_terms( $postId, 'product_cat' );
                 ?>
                 <ul class="xs-simple-tag">
                     <?php
