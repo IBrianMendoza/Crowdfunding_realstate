@@ -13,6 +13,11 @@ if ($product->get_type() == 'wp_fundraising') {
         $rendimiento         = get_post_meta( $post->ID, '_wf_rendimiento', true );
         $garantia            = get_post_meta( $post->ID, '_wf_garantia', true );
         $porcentaje          = get_post_meta( $post->ID, '_wf_porcentaje', true );
+        $show_end_date = wf_get_option('_wf_hide_campaign_expiry_from_listing', 'wf_basics');
+        $days_remaining = apply_filters('date_expired_msg', esc_html__('La fecha expiró', 'wp-fundraising'));
+        if (wf_date_remaining(get_the_ID())){
+            $days_remaining = apply_filters('date_remaining_msg', esc_html__(wf_date_remaining(get_the_ID()), 'wp-fundraising'));
+        }
     ?>
 
         <form enctype="multipart/form-data" method="post" class="cart">
