@@ -2764,6 +2764,7 @@ h1#ps_login_success a:hover {
     line-height: 1.4;
     pointer-events: none;
     z-index: 10;
+    max-width: 300px;
 }
 
 .help-tip p:before{
