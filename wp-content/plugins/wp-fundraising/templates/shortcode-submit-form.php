@@ -48,11 +48,11 @@ function wp_fundraising_campaign_form_shortcode( $atts ){
                         $description        = get_the_content();
                         $category           = strip_tags(get_the_term_list( get_the_ID(), 'product_cat', '', ','));
                         $tag                = strip_tags( get_the_term_list( get_the_ID(), "product_tag","",", ") );
-                        if ( has_post_thumbnail() ) {
+                        //if ( has_post_thumbnail() ) {
                             $image_url          = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'full' );
                             $image_url          = $image_url[0];
                             $image_id           = get_post_thumbnail_id( get_the_ID() );
-                        }
+                        //}
                         $video               = get_post_meta( get_the_ID(), '_wf_funding_video', true );
                         $start_date          = get_post_meta( get_the_ID(), '_wf_duration_start', true );
                         $end_date            = get_post_meta( get_the_ID(), '_wf_duration_end', true );
@@ -197,7 +197,7 @@ function wp_fundraising_campaign_form_shortcode( $atts ){
         $html .= '<input type="text" class="form-control" name="wf_campaign_goal" id="campaign_goal" value="'.$campaign_goal.'">';
         $html .= '</div>';
 
-        if (wf_get_option('_wf_hide_min_price', 'wf_basics') != "on") {
+        //if (wf_get_option('_wf_hide_min_price', 'wf_basics') != "on") {
             //Minimum Amount
             $html .= '<div class="form-group">';
             $html .= '<span class="h3">' . esc_html__("Monto minimo", "wp-fundraising") . '</span>';
@@ -206,7 +206,7 @@ function wp_fundraising_campaign_form_shortcode( $atts ){
             $html .= '</div>';
             $html .= '<input type="number" name="wf_campaign_min_amount" class="form-control" id="campaign_min_amount" value="'.$minimum_amount.'">';
             $html .= '</div>';
-        }
+       // }
 
         //Recomended Amount
         $html .= '<div class="form-group">';
@@ -273,7 +273,7 @@ function wp_fundraising_campaign_form_shortcode( $atts ){
 
         $html .= '</select>';
         $html .= '</div>';
-        if (wf_get_option('_wf_hide_min_price', 'wf_basics') != "on") {
+        //if (wf_get_option('_wf_hide_min_price', 'wf_basics') != "on") {
             //Maximum Amount
             $html .= '<div class="form-group">';
             $html .= '<span class="h3">' . esc_html__("Monto máximo", "wp-fundraising") . '</span>';
@@ -282,7 +282,7 @@ function wp_fundraising_campaign_form_shortcode( $atts ){
             $html .= '</div>';
             $html .= '<input type="number" name="wf_campaign_max_amount" class="form-control" id="campaign_max_amount" value="'.$maximum_amount.'">';
             $html .= '</div>';
-        }
+        //}
         //Predefined Pledge Amount
         $html .= '<div class="form-group">';
         $html .= '<span class="h3">' . esc_html__("Monto predefinido de inversión", "wp-fundraising") . '</span>';
