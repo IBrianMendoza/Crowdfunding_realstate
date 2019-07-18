@@ -234,7 +234,9 @@ ul,li{
     height: 100%;
     overflow: visible !important;
     width: calc(40px - 13px);
-    position: relative; }
+    position: relative; 
+    min-width:10% !important;
+}
 .xs-skill-bar .xs-skill-track p,
 .xs-skill-bar-v3 .xs-skill-track p {
     position: absolute;
