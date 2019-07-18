@@ -836,7 +836,7 @@ ol.xs-breadcumb.fundpress-breadcumb {
 }
 
 .container-fluid {
-    height:95px;
+    max-height:95px;
 }
 
 /*********Start branch dev-jubair ***********/
