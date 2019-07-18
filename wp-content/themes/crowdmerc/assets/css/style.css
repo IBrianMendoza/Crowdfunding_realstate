@@ -3926,8 +3926,12 @@ a.nav-brand.xs-logo.fundpress-logo-v3 {
     color: #FFFFFF; }
 
 .fundpress-menu-v2 .fundpress-logo-v2 {
-    padding: 16px 0;
-    text-align: center; }
+    padding: 0;
+    text-align: center; 
+    -webkit-box-shadow: 0px 4px 8px 2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 4px 8px 2px rgba(0,0,0,0.75);
+    box-shadow: 0px 4px 8px 2px rgba(0,0,0,0.75);
+}
 
 .fundpress-menu-v2 .nav-menu .submenu-indicator-chevron {
     border-color: transparent #FFFFFF #FFFFFF transparent; }
