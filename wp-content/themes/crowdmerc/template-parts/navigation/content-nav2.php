@@ -20,7 +20,7 @@ $header_class = ($show_border) ? 'xs-menu-style-border' : '';
 ?>
 <!-- header section -->
 <header class="fundpress-header-main-version header-boxed">
-    <div class="container">
+    <div class="container-fluid">
         <nav class="xs-menus fundpress-menu fundpress-menu-v2">
             <div class="nav-header">
                 <div class="nav-toggle"></div>
