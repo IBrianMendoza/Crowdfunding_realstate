@@ -1078,3 +1078,7 @@ span.woocommerce-input-wrapper {
     padding-top: 150px !important;
     padding-bottom: 50px !important;
 }
+#img-secction{
+    width: 100%;
+    object-fit: cover;
+}
