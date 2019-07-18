@@ -835,6 +835,10 @@ ol.xs-breadcumb.fundpress-breadcumb {
     clear: both;
 }
 
+.container-fluid {
+    height:95px;
+}
+
 /*********Start branch dev-jubair ***********/
 #wp-calendar{
     text-align: center;
