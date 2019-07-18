@@ -20,7 +20,7 @@ $header_class = ($show_border) ? 'xs-menu-style-border' : '';
 ?>
 <!-- header section -->
 <header class="xs-header-section xs-header-height xs-menu-style-solid fundpress-header-main-version color-navy-blue <?php echo esc_attr($header_class); ?>">
-	<div class="container">
+	<div class="container-fluid">
 		<nav class="xs-menus fundpress-menu clear-both">
 			<div class="nav-header">
 				<div class="nav-toggle"></div>
