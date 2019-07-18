@@ -131,7 +131,7 @@ class WP_Fundraising_Registration_Function{
 
                 if ( is_wp_error($userid) ){
                     $data['status'] = 'error';
-                    $data['msg'] = 'Invalid username or password';
+                    $data['msg'] = 'Usuario o contraseña incorrectos';
                 }else{
                     $user_details	 = new WP_User($userid);
                     $data['name']	 = $user_details->display_name;
@@ -141,7 +141,7 @@ class WP_Fundraising_Registration_Function{
             }
             else{
                 $data['status'] = 'error';
-                $data['msg'] = "Invalid username or password";
+                $data['msg'] = "Usuario o contraseña incorrectos";
             }
             echo json_encode($data);
             wp_die();
