@@ -214,7 +214,6 @@ if (have_posts()): ?>
                                 <div id="contenedor7" >
                                     <div><a class="btn btn-success button-campaings-secction" href="<?php the_permalink();?>">Listo para invertir</a></div>
                                 </div>
-                                <?php if($args['author'] == 'yes'){ ?>
                                     <span class="xs-separetor border-separetor xs-separetor-v2 fundpress-separetor xs-mb-20 xs-mt-30"></span>
                                     <div class="row xs-margin-0">
                                         <div>
@@ -224,7 +223,6 @@ if (have_posts()): ?>
                                             <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'nickname' ) ); ?>"><span><?php esc_html_e('Por', 'wp-fundraising'); ?></span><?php echo get_the_author_meta( 'nickname' ); ?></a>
                                         </div>
                                     </div>
-                                <?php } ?>
                             </div>
                         </div>
                     </div>
