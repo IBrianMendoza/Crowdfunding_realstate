@@ -58,8 +58,9 @@ global $post, $woocommerce, $product;
             $attachment_ids = $product->get_gallery_image_ids();
             if ( $attachment_ids && has_post_thumbnail() ) {
                 foreach ( $attachment_ids as $attachment_id ) {
-                    $img_src = wp_get_attachment_image_src( $attachment_id  );
-                    ?><li><a href="<?php echo esc_url($img_src[0]);?>" class="xs-image-popup"><img src="<?php echo esc_url($img_src[0]);?>" alt=""></a></li><?php
+                    $img_src = wp_get_attachment_image_src( $attachment_id, 'full' );
+                    $img_src_attachment = wp_get_attachment_image_src( $attachment_id  );
+                    ?><li><a href="<?php echo esc_url($img_src[0]);?>" class="xs-image-popup"><img src="<?php echo esc_url($img_src_attachment[0]);?>" alt=""></a></li><?php
                 }
             } ?>
         </ul>
