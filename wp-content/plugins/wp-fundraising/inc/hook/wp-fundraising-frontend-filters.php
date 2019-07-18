@@ -28,7 +28,7 @@ if (!function_exists('wf_single_backers_tab_text')) {
 if (!function_exists('wf_single_update_tab_text')) {
     function wf_single_update_tab_text()
     {
-        return apply_filters('wf_single_update_tab_text', esc_html__('Actualizar', 'wp-fundraising'));
+        return apply_filters('wf_single_update_tab_text', esc_html__('Actualizaciones', 'wp-fundraising'));
     }
 }
 
@@ -80,7 +80,7 @@ if (!function_exists('wf_single_related_campaign_description')) {
             'wf_single_related_campaign_description',
             sprintf(
                 '<p>%s</p>' ,
-                esc_html__('FundPress has built a platform focused on aiding entrepreneurs, startups, and companies raise capital from anyone.', 'wp-fundraising')
+                esc_html__('Estos son otros proyectos que puedes ver', 'wp-fundraising')
             )
         );
     }
