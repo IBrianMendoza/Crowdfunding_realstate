@@ -11,7 +11,7 @@ function wp_fundraising_campaign_form_shortcode( $atts ){
     global $post;
     $title = $campaign_goal = $description = $short_description  = $minimum_amount = $maximum_amount = $category = $tag = $image_id = $video = $start_date = $porconstruccion = $plazo = $rendimiento = $garantia = $porcentaje = '';
     $end_date = $recomended_amount = $countries = $country = $location = $type  = $image_url = '';
-    $campaign_end_method = $campaign_contributor_table = $contributor_show = $campaign_country = $estimated_date = $campaign_location = '';
+    $url_imagen = $campaign_end_method = $campaign_contributor_table = $contributor_show = $campaign_country = $estimated_date = $campaign_location = '';
     $checked = $checked2 = '';
     $campaign_reward_offer = '';
     $html = '';
@@ -48,16 +48,26 @@ function wp_fundraising_campaign_form_shortcode( $atts ){
                         $description        = get_the_content();
                         $category           = strip_tags(get_the_term_list( get_the_ID(), 'product_cat', '', ','));
                         $tag                = strip_tags( get_the_term_list( get_the_ID(), "product_tag","",", ") );
-                        //if ( has_post_thumbnail() ) {
-                            $image_url          = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'full' );
+                        if ( has_post_thumbnail() ) {
+                            $img_id = get_post_thumbnail_id( $post->ID );
+                            $image_url          = wp_get_attachment_image_src( $img_id, 'full' );
                             $image_url          = $image_url[0];
-                            $image_id           = get_post_thumbnail_id( get_the_ID() );
-                        //}
+                            $image_id           = $img_id;
+                            $url_imagen = get_post_meta($post->ID, '_wf_url_imagen');
+                        } else {
+                        $url_imagen = $image_url;
+                        }
                         $video               = get_post_meta( get_the_ID(), '_wf_funding_video', true );
                         $start_date          = get_post_meta( get_the_ID(), '_wf_duration_start', true );
                         $end_date            = get_post_meta( get_the_ID(), '_wf_duration_end', true );
-                        $minimum_amount      = get_post_meta( get_the_ID(), '_wf_funding_maximum_amount', true );
-                        $maximum_amount      = get_post_meta( get_the_ID(), '_wf_funding_minimum_amount', true );
+                        $minimum_amount = get_post_meta($post->ID, '_wf_funding_minimum_price', true);
+                        $maximum_amount = get_post_meta($post->ID, '_wf_funding_maximum_price', true);
+                        $predefined_amount = get_post_meta($post->ID, '_wf_campaign_predefined_amount', true);
+                        
+                        //$predefined_amount = get_post_meta($post->ID, '_wf_predefined_amount', true);
+                        //$minimum_amount      = get_post_meta( get_the_ID(), '_wf_funding_maximum_amount', true );
+                        //$maximum_amount      = get_post_meta( get_the_ID(), '_wf_funding_minimum_amount', true );
+
                         $recomended_amount   = get_post_meta( get_the_ID(), '_wf_funding_recommended_price', true );
                         $campaign_goal       = get_post_meta( get_the_ID(), '_wf_funding_goal', true );
                         $campaign_end_method = get_post_meta(get_the_ID(), '_wf_campaign_end_method', true);
@@ -117,7 +127,7 @@ function wp_fundraising_campaign_form_shortcode( $atts ){
 
         $html .= '<div class="row">';
 
-        //Category
+        //Category     
         $html .= '<div class="col-lg-6">';
         $html .= '<div class="form-group">';
         $html .= '<span class="h3">' . esc_html__("Categoria", "wp-fundraising") . '</span>';
@@ -156,7 +166,7 @@ function wp_fundraising_campaign_form_shortcode( $atts ){
         $html .= '<p>' . esc_html__("Subir una imagen del proyecto", "wp-fundraising") . '</p>';
         $html .= '</div>';
         $html .= '<div class="custom-file">';
-        $html .= '<input type="file" class="custom-file-input" name="wf_campaign_image_id" id="customFile" value="'.$image_url.'">';
+        $html .= '<input type="file" class="custom-file-input" name="wf_campaign_image_id" id="customFile" value="'.$url_imagen.'">';
         $html .= '<label class="custom-file-label" for="customFile"></label>';
         $html .= '<span class="file-name"></span>';
         $html .= '</div>';
@@ -289,7 +299,7 @@ function wp_fundraising_campaign_form_shortcode( $atts ){
         $html .= '<div class="help-tip">';
         $html .= '<p>' . esc_html__("La cantidad predefinida le permite colocar la cantidad que invierte en el cuadro por clic", "wp-fundraising") . '</p>';
         $html .= '</div>';
-        $html .= '<input type="number" class="form-control" name="wf_campaign_predefined_amount" id="campaign_predefined_amount">';
+        $html .= '<input type="number" class="form-control" name="wf_campaign_predefined_amount" id="campaign_predefined_amount" value="'.$predefined_amount.'" >';
         $html .= '</div>';
 
         //Contributor Anonymity

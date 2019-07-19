@@ -26,7 +26,7 @@ if (! class_exists('WP_Fundraising_Frontend_Campaign_Submit_Form')) {
                 $title = $campaign_goal = $description = $short_description  = $campaign_predefined_amount = $category = $tag = $image_id = $video = $start_date = '';
                 $end_date = $min_price = $max_price = $recommended_price = $type = '';
                 $porconstruccion = $plazo = $rendimiento = $garantia = $porcentaje = '';
-                $campaign_end_method = $campaign_contributor_table = $campaign_contributor_show = $campaign_country = $campaign_location = '';
+                $campaign_end_method = $campaign_contributor_table = $campaign_contributor_show = $campaign_country = $campaign_location = $campaign_predefined_amount = '';
 
                 if ( empty($_POST['wp_fundraising_terms_agree'])){
                     die(json_encode(array('success'=> 0, 'message' => esc_html__('Please check terms condition', 'wp-fundraising'))));
@@ -109,6 +109,9 @@ if (! class_exists('WP_Fundraising_Frontend_Campaign_Submit_Form')) {
                 }
                 if ($_POST['wf_campaign_porcentaje']) {
                     $porcentaje = sanitize_text_field($_POST['wf_campaign_porcentaje']);
+                }
+                if ($_POST['wf_campaign_predefined_amount']) {
+                    $campaign_predefined_amount = sanitize_text_field($_POST['wf_campaign_predefined_amount']);
                 }
 
 
@@ -210,7 +213,7 @@ if (! class_exists('WP_Fundraising_Frontend_Campaign_Submit_Form')) {
                     update_post_meta($campaign_id, '_wf_funding_maximum_price', $max_price);
                     update_post_meta($campaign_id, '_wf_funding_recommended_price', $recommended_price);
                     update_post_meta($campaign_id, '_wf_campaign_predefined_amount', $campaign_predefined_amount);
-
+                    update_post_meta($campaign_id, '_wf_url_imagen', $image_id);
 
                     update_post_meta($campaign_id, '_wf_campaign_end_method', $campaign_end_method);
                     update_post_meta($campaign_id, '_wf_show_contributor_table', $campaign_contributor_table);
